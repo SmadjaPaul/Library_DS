@@ -141,7 +141,7 @@ def columns_filling_rate(dataframe, columns='all', missing_only=False):
         print("No missing value.")
 
 #-----------------------------------------------------------------------
-def categorical_matrix(dataframe, theil_u=True, return_results):
+def categorical_matrix(dataframe, theil_u=True):
     """Displays a kind of "correlation matrix" including categorical features."""
 
     # loading library
@@ -165,9 +165,6 @@ def categorical_matrix(dataframe, theil_u=True, return_results):
         nominal_columns=categorical_columns,
     )
     
-    # Returns correlation matrix, if requested
-    if return_results:
-        return corr
 
     
 #-----------------------------------------------------------------------
