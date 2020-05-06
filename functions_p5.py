@@ -163,7 +163,6 @@ def categorical_matrix(dataframe, theil_u=True, return_results=False):
         figsize=(15,7),
         theil_u=theil_u, # asymetric measure of correlation for nominal feature
         nominal_columns=categorical_columns,
-        return_results=return_results
     )
     
     # Returns correlation matrix, if requested
