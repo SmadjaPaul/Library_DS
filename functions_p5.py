@@ -145,7 +145,7 @@ def categorical_matrix(dataframe):
     """Displays a kind of "correlation matrix" including categorical features."""
 
     # loading library
-    from dython.nominal import associations
+    from dython.nominal import associations, cluster_correlations
 
     # Get the categorical and boolean columns
     categorical_columns = list(dataframe.select_dtypes(include='category').columns)
