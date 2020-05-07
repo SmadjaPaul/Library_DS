@@ -1,4 +1,10 @@
 
+# Importations
+from matplotlib import pyplot as plt
+import pandas as pd
+import seaborn as sns
+import numpy as np
+    
 #-----------------------------------------------------------------------
 def downcast_dtypes(dataframe, save=False):
     '''This function tries to downcast integer and floating dtypes columns
@@ -172,12 +178,7 @@ def categorical_matrix(dataframe):
 
 def heatmap(x, y, **kwargs):
     """heatmap with a better readability."""
-    # Importations
-    from matplotlib import pyplot as plt
-    import pandas as pd
-    import seaborn as sns
-    import numpy as np
-    
+
     if 'color' in kwargs:
         color = kwargs['color']
     else:
