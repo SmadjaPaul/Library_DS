@@ -166,7 +166,8 @@ def categorical_matrix(dataframe):
     
     # Sort the correlations_matrix s and display graph
     correlations_matrix = assoc['corr']
-    return correlations_matrix, _ = cluster_correlations(correlations)
+    correlations_matrix, _ = cluster_correlations(correlations)
+    return (correlations_matrix)
 
 
     
