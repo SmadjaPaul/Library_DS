@@ -158,10 +158,16 @@ def categorical_matrix(dataframe):
     df_for_correlations = df_for_correlations.select_dtypes(exclude=['object', 'datetime', 'timedelta'])
 
     # Calculate associations and display graph
-    return associations(df_for_correlations,
-                        theil_u=True, # asymetric measure of correlation for nominal feature
-                        figsize=(15, 15)
-                       )
+    assoc = associations(df_for_correlations.select_dtypes(exclude=['object','timedelta64[ns]', 'datetime64[ns]' ]),
+             nan_strategy ='drop_samples',
+             figsize=(30,30),
+             plot=False
+             )
+    
+    # Sort the correlations_matrix s and display graph
+    correlations_matrix = assoc['corr']
+    return correlations_matrix, _ = cluster_correlations(correlations)
+
 
     
 #-----------------------------------------------------------------------
