@@ -178,7 +178,10 @@ def categorical_matrix(dataframe):
 
 def heatmap(x, y, **kwargs):
     """heatmap with a better readability."""
-
+    
+    size_factor=1.5
+    fig = plt.figure(1, figsize=(size_factor*10, size_factor*10))
+    
     if 'color' in kwargs:
         color = kwargs['color']
     else:
