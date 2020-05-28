@@ -291,7 +291,7 @@ def heatmap(x, y, **kwargs):
         ax.yaxis.tick_right() # Show vertical ticks on the right 
 
 #-----------------------------------------------------------------------
-def corrplot(data, size=14, size_scale=500, marker='s'):
+def corrplot(data, size_scale=500, marker='s'):
     """get corr of a dataframe and output my improve heatmap."""
     corr = pd.melt(data.reset_index(), id_vars='index')
     corr.columns = ['x', 'y', 'value']
@@ -299,8 +299,8 @@ def corrplot(data, size=14, size_scale=500, marker='s'):
         corr['x'], corr['y'],
         color=corr['value'], color_range=[-1, 1],
         palette=sns.diverging_palette(20, 220, n=256),
-        #size=corr['value'].abs(), size_range=[0,1],
-        size=size, size_range=[0,1],
+        size=corr['value'].abs(), size_range=[0,1],
+        #size=size, size_range=[0,1],
         marker=marker,
         x_order=data.columns,
         y_order=data.columns[::-1],
